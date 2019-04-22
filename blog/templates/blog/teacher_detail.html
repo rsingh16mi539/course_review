@@ -1,0 +1,34 @@
+{% extends "blog/base.html" %}
+{% block content %}
+	<article class="media content-section">
+	  <div class="media-body">
+		    <h2 class="article-title"><b>Teacher:</b> {{ object.teacher_name }}</h2>
+		    <div>
+		    	<h4><b>Total Number of Reviews :</b> {{ object.total_reviews }}</h4>
+		    </div>
+		    <div>
+		    	<h4><b>Quality of Teaching :</b> {{ object.quality }} / 5.00 </h4>
+		    </div>
+		    <div>
+		    	<h4><b>Quantity of Teaching :</b> {{ object.quantity }} / 5.00 </h4>
+		    </div>
+		    <div>
+		    	<h4><b>Level of Difficulty:</b> {{ object.level_of_difficulty }} / 5.00 </h4>
+		    </div>
+		    <div>
+		    	<h4><b>Tags:</b></h4>
+		    	<h5>Take Again: {{ object.take_again }}</h5>
+		    	<h5>Tough Grader: {{ object.tough_grader }}</h5>
+		    	<h5>Self Study Required: {{ object.self_study_required }}</h5>
+		    	<h5>Participation Matters: {{ object.participation_matters }}</h5>
+		    	<h5>Lot of Assignments: {{ object.lot_of_assignment }}</h5>
+		    	<h5>Accessible Outside Class: {{ object.accessible_outside_class }}</h5>
+		    	<h5>Skip Class you Do Not Pass: {{ object.skip_class_you_dont_pass }}</h5>
+		    	<h5>Impartial: {{ object.impartial }}</h5>
+		    	<h5>Test Heavy: {{ object.test_heavy }}</h5>
+		    	<h5>Amazing Lectures: {{ object.amazing_lectures }}</h5>
+		        <h5>Lecture Heavy: {{ object.lecture_heavy }}</h5>
+	        </div>
+	  </div>
+	</article>
+{% endblock content %}

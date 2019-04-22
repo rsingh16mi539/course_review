@@ -1,0 +1,87 @@
+{% extends "blog/base.html" %}
+{% block content %}
+	<article class="media content-section">
+	  <img class="rounded-circle article-img" src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/256x256/plain/user.png">
+	  <div class="media-body">
+	    <div class="article-metadata">
+	      <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
+	      <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+	      {% if object.author == user %}
+		      <div>
+		      	<a class="btn btn-secondary btm-sm mt-1 mb-1" href="{% url 'post-update' object.id %}">Update</a>
+		      	<!-- <a class="btn btn-danger btm-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}">Delete</a> -->
+		      </div>
+	      {% endif %}
+	    </div>
+		    <h2 class="article-title"><b>Inshort:</b> {{ object.title }}</h2>
+		    <div>
+		    	<h4><b>Course :</b> {{ object.course.course_name }}</h4>
+		    </div>
+		    <div>
+		    	<h4><b>Teacher :</b><a class="article-title " href="{% url 'teacher-detail' object.teacher.id %}"> <u>{{ object.teacher.teacher_name }}</u></a></h4>
+		    </div>
+		    <div>
+		    	<h4><b>Grade Received :</b> {{ object.grade_received }}</h4>
+		    </div>
+		    <div>
+			    <h4><b>Course Review :</b></h4>
+			    <p class="article-content">{{ object.course_review }}</p>
+		    </div>
+		    <div>
+		    	<h4><b>Teacher Review :</b></h4>
+		    	<p class="article-content">{{ object.teacher_review }}</p>
+		    </div>
+		    <div>
+		    	<h4><b>Suggested Study Material :</b></h4>
+		    	<p class="article-content">{{ object.study_material }}</p>
+		    </div>
+		    <div>
+		    	<h4><b>Quality of Teaching :</b> {{ object.quality_rating }}/5</h4>
+		    </div>
+		    <div>
+		    	<h4><b>Quantity of Teaching :</b> {{ object.quantity_rating }}/ 5</h4>
+		    </div>
+		    <div>
+		    	<h4><b>Level of Difficulty:</b> {{ object.level_of_difficulty_rating }}/ 5</h4>
+		    </div>
+		    <div>
+		    	<h4><b>Tags:</b></h4>
+		    	<h5>
+		    	{% if object.take_again == True %}
+			      	# Take Again #
+		        {% endif %}
+		        {% if object.tough_grader == True %}
+			      	# Tough Grader #
+		        {% endif %}
+		        {% if object.self_study_required == True %}
+			      	# Self Study Required #
+		        {% endif %}
+		        {% if object.participation_matters == True %}
+			      	# Participation Matters #
+		        {% endif %}
+		        {% if object.lot_of_assignment == True %}
+			      	# Lot of Assignments #
+		        {% endif %}
+		        {% if object.accessible_outside_class == True %}
+			      	# Accessible Outside Class #
+		        {% endif %}
+		        {% if object.skip_class_you_dont_pass == True %}
+			      	# Skip Class you Do Not Pass #
+		        {% endif %}
+		        {% if object.impartial == True %}
+			      	# Impartial #
+		        {% endif %}
+		        {% if object.test_heavy == True %}
+			      	# Test Heavy #
+		        {% endif %}
+		        {% if object.amazing_lectures == True %}
+			      	# Amazing Lectures #
+		        {% endif %}
+		        {% if object.lecture_heavy == True %}
+			      	# Lecture Heavy #
+		        {% endif %}
+		    	</h5>
+	        </div>
+	  </div>
+	</article>
+{% endblock content %}
