@@ -8,4 +8,5 @@ their upcoming semester. This will also help students to manage their time as th
 prior knowledge about the various activities that course coordinator organizes throughout
 the course.
 
-# Link to course_review: https://coursereviewapp.herokuapp.com/
+## Link to course_review: 
+https://coursereviewapp.herokuapp.com/
