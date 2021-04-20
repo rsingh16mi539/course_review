@@ -51,7 +51,7 @@ pluggy==0.6.0
 protobuf==3.0.0
 psycopg2==2.8.2
 psycopg2-binary==2.8.2
-py==1.5.2
+py==1.10.0
 PyAutoGUI==0.9.38
 pycairo==1.16.2
 pycrypto==2.6.1
